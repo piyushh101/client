@@ -1,0 +1,102 @@
+:root{
+  --headline:#1f2b37;
+  --muted:#5b6770;
+  --dot:#c7d1d6;
+  --dot-active:#bfa13a;    /* gold */
+}
+
+/* Center the whole section on the page */
+.testi{
+  padding: 70px 20px;
+  background:#fff;
+  display:flex;
+  justify-content:center;
+}
+
+.testi__inner{
+  max-width:1100px;
+  width:100%;
+  margin:0 auto;
+}
+
+/* Row layout, centered */
+.testi__wrapper{
+  display:flex;
+  flex-direction:row;
+  gap:40px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Image */
+.testi__photo{
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 8px 26px rgba(0,0,0,.12);
+}
+.testi__photo img{
+  width:320px;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}
+
+/* Content */
+.testi__content{ position:relative; max-width:520px; text-align:left; }
+.testi__eyebrow{
+  letter-spacing:.16em;
+  font-size:12px;
+  font-weight:700;
+  color: rgba(129,111,5);
+  margin:0 0 6px;
+}
+.testi__title{
+  color:var(--headline);
+  font-size:38px;
+  line-height:1.2;
+  margin:0 0 14px;
+}
+.testi__text{
+  color:var(--muted);
+  line-height:1.9;
+  margin:0 0 14px;
+}
+
+.testi__rating{ margin:8px 0 10px; }
+.star{ color:#d9dee2; font-size:18px; margin-right:3px; }
+.filled{ color:#f5c54b; }
+
+.testi__author{ color:#2e3a46; }
+.testi__author span{ color:#1fb6aa; }
+
+/* dots */
+.testi__dots{ display:flex; gap:8px; margin-top:12px; }
+.dot{
+  width:8px; height:8px; border-radius:50%;
+  border:none; background:var(--dot); cursor:pointer;
+}
+.dot.active{ background:var(--dot-active); }
+
+/* arrows (desktop only) */
+.testi__arrows{
+  position:absolute; right:0; top:0; display:flex; gap:8px;
+}
+.testi__arrows button{
+  width:34px; height:34px; border-radius:50%; border:0; cursor:pointer;
+  background:#eef2f5; color:#22313f; font-size:18px;
+}
+.testi__arrows button:hover{ background:#e2e8ee; }
+
+/* Responsive */
+@media (max-width:992px){
+  .testi__wrapper{ flex-direction:column; text-align:center; }
+  .testi__content{ text-align:center; margin:0 auto; }
+  .testi__title{ font-size:30px; }
+  .testi__arrows{ display:none; }
+}
+@media (max-width:576px){
+  .testi{ padding: 30px 16px 60px; }
+  .testi__title{ font-size:26px; }
+  .testi__photo img{ width:100%; max-width:340px; }
+}
+  

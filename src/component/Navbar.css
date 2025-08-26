@@ -1,0 +1,59 @@
+/* Header container */
+.header{
+  background:#fff;
+  box-shadow:0 2px 5px rgba(0,0,0,.1);
+  position:sticky; top:0; z-index:1000;
+}
+
+/* Top info bar */
+.top-info{
+  background:#111; color:#fff;
+  display:flex; 
+
+  padding:5px 28px; font-size:14px; flex-wrap:wrap; gap:12px;
+}
+
+/* Navbar */
+.navbar{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 20px; position:relative; /* needed for absolute dropdown */
+}
+
+.logo img{ height:70px; width:auto; cursor:pointer; 
+margin-left: 15px;
+}
+
+.nav-links{ display:flex; list-style:none; gap:20px; }
+.nav-links li a{ text-decoration:none; color:#111; }
+
+/* underline hover */
+.nav-links li a{ position:relative; }
+.nav-links li a::after{
+  content:""; position:absolute; left:0; bottom:-5px; width:0; height:2px;
+  background:goldenrod; transition:width .3s;
+}
+.nav-links li a:hover::after{ width:100%; }
+
+.book-btn{
+  background:goldenrod; border:none; padding:8px 15px; color:#fff;
+  cursor:pointer; border-radius:5px; margin-left:20px;
+}
+.book-btn:hover{ filter:brightness(.95); }
+
+/* Hamburger */
+.menu-icon{ display:none; font-size:28px; cursor:pointer; color:#111; z-index:1100; }
+
+/* Mobile */
+@media (max-width:768px){
+  .menu-icon{ display:block; }
+  .nav-links{
+    display:none; flex-direction:column; gap:15px;
+    position:absolute; top:100%; right:20px;
+    background:#fff; padding:15px; border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,.2); z-index:1000;
+  }
+  .nav-links.active{ display:flex; }
+}
+/* .number{
+  margin-left: 600px;
+} */
