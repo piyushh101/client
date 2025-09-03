@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../config";   // ✅ import API URL
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -10,7 +11,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://bafna-resort-api.onrender.com/api/login", {
+const res = await fetch(`${API_BASE_URL}/api/login`, {   // ✅ use config
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -53,7 +54,16 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           style={{ display: "block", margin: "10px auto", padding: "8px" }}
         />
-        <button type="submit" style={{ padding: "8px 15px", background: "goldenrod", color: "#fff", border: "none", borderRadius: "5px" }}>
+        <button
+          type="submit"
+          style={{
+            padding: "8px 15px",
+            background: "goldenrod",
+            color: "#fff",
+            border: "none",
+            borderRadius: "5px",
+          }}
+        >
           Login
         </button>
       </form>
