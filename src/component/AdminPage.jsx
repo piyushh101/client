@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../config";
 
 export default function AdminPage() {
   const [messages, setMessages] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://bafna-resort-api.onrender.com/api/contact", {
+    fetch(`${API_BASE_URL}/api/contact`,  {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
