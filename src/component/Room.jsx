@@ -2,17 +2,17 @@ import React from "react";
 import "./Room.css";
 
 // Import images (works great with Vite/CRA)
-import img1 from "../ASSETS/Book2.jpg";
-import img2 from "../ASSETS/Book1.jpg";
-import img3 from "../ASSETS/Book3.jpg";
+import img1 from "../ASSETS/room.jpg";
+import img2 from "../ASSETS/room2.jpg";
+import img3 from "../ASSETS/room3.jpg";
 
 export default function Rooms() {
   const rooms = [
     {
       id: 1,
       title: "Deluxe Ocean Suite",
-      price: 560,                     // ✅ add price
-      size: "45 ft",
+      price: null,                     // ✅ add price
+      size: "10 ft",
       capacity: "Max person 4",
       bed: "1 King + 1 Sofa",
       services: "Wifi, Mini Bar, Sea View",
@@ -21,8 +21,8 @@ export default function Rooms() {
     {
       id: 2,
       title: "Premium King Room",
-      price: 400,
-      size: "30 ft",
+      price: null,
+      size: "12 ft",
       capacity: "Max person 5",
       bed: "King Beds",
       services: "Wifi, Television, Bathroom",
@@ -31,8 +31,8 @@ export default function Rooms() {
     {
       id: 3,
       title: "Small Room",
-      price: 300,
-      size: "20 ft",
+      price: null,
+      size: "12 ft",
       capacity: "Max person 2",
       bed: "Queen Bed",
       services: "Wifi, Breakfast",

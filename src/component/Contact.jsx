@@ -16,11 +16,29 @@ export default function Contact() {
     setForm((f) => ({ ...f, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
-    setStatus("Thanks! Your message has been sent.");
-    setForm({ name: "", email: "", subject: "", message: "" });
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+      console.log("Server response:", data);
+
+      if (data.success) {
+        setStatus("✅ Thanks! Your message has been sent.");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("⚠️ Failed to send. Try again.");
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      setStatus("❌ Server error. Please try again later.");
+    }
   };
 
   return (
@@ -83,7 +101,9 @@ export default function Contact() {
             </div>
 
             <div className="actions">
-              <button className="btn" type="submit">Send Message</button>
+              <button className="btn" type="submit">
+                Send Message
+              </button>
               {status && <span className="status">{status}</span>}
             </div>
           </form>
@@ -97,7 +117,14 @@ export default function Contact() {
               <div className="ico">📍</div>
               <div>
                 <p className="info-title">Location</p>
-                <p className="info-text">123 Main Street, Kolkata, WB 700001</p>
+                <a
+                  className="info-text"
+                  href="https://www.google.com/maps/place/Bafna+Resort/@20.2516392,81.5045601,17z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  N.H 30 Jagdalpur, Main road, C.G, Singarbhat, Kanker, Chhattisgarh 494334
+                </a>
               </div>
             </div>
 
@@ -106,7 +133,9 @@ export default function Contact() {
               <div>
                 <p className="info-title">Phone</p>
                 <p className="info-text">
-                  <a className="link" href="tel:+919876543210">+91 98765 43210</a>
+                  <a className="link" href="tel:+9199407726406">
+                    +91 994077 26406
+                  </a>
                 </p>
               </div>
             </div>
@@ -116,7 +145,9 @@ export default function Contact() {
               <div>
                 <p className="info-title">Email</p>
                 <p className="info-text">
-                  <a className="link" href="mailto:contact@example.com">contact@example.com</a>
+                  <a className="link" href="mailto:reservation@bafnaresort.com">
+                    reservation@bafnaresort.com
+                  </a>
                 </p>
               </div>
             </div>

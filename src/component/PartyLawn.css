@@ -1,0 +1,92 @@
+.party-lawn {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero */
+.lawn-hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center bottom; /* ✅ focus on lawn instead of sky */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.lawn-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.lawn-hero-text {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+.lawn-hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.lawn-hero-text p {
+  font-size: 1.2rem;
+}
+
+/* Intro */
+.lawn-intro {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+.lawn-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: goldenrod;
+}
+.lawn-text ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+.lawn-text li {
+  margin-bottom: 10px;
+}
+.lawn-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Gallery */
+.lawn-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+.lawn-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform .3s;
+}
+.lawn-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .lawn-intro {
+    grid-template-columns: 1fr;
+  }
+  .lawn-hero-text h1 {
+    font-size: 2rem;
+  }
+}

@@ -10,9 +10,9 @@ function Footer() {
         {/* Company Info */}
         <div className="footer__col">
           <h2 className="logo">Bafna Resort</h2>
-          <p>+91 98765 43210</p>
-          <p>info@bafnaresort.com</p>
-          <p>123 Main Road, Kolkata, India</p>
+          <p>+91 94077 26406</p>
+          <p> reservation@bafnaresort.com</p>
+          <p>N.H 30 Jagdalpur, Main road, C.G, Singarbhat, Kanker, Chhattisgarh 494334</p>
         </div>
 
         {/* Blog Section */}
@@ -34,9 +34,8 @@ function Footer() {
           </form>
           <div className="socials">
             <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaLinkedinIn /></a>
+            <a href="https://www.instagram.com/bafnaresort?igsh=YjZ0cGM5dWtmM3N2"><FaInstagram /></a>
+        
           </div>
         </div>
       </div>

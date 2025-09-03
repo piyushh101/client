@@ -10,9 +10,9 @@ import { FaCar, FaConciergeBell, FaSpa, FaUtensils, FaCocktail } from "react-ico
 const SERVICES = [
   { icon: <FaCar />,        title: "Transportation" },
   { icon: <FaConciergeBell />, title: "Reiseservice" },
-  { icon: <FaSpa />,        title: "Spa Relaxation" },
-  { icon: <FaUtensils />,   title: "Restaurant" },
-  { icon: <FaCocktail />,   title: "Bar & Drink" },
+  { icon: <FaSpa />,        title: "Spa Banquet Hall" },
+  { icon: <FaUtensils />,   title: "Aahaar Veg Restauren" },
+  { icon: <FaCocktail />,   title: "Party Lawn" },
 ];
 
 export default function Service() {

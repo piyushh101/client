@@ -1,54 +1,73 @@
-import React from "react";
-import "./About.css";
-import Typewriter from "typewriter-effect";
+// src/component/AdminPage.jsx
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+import "./Admin.css";
 
-// swap these with your real images in /src/ASSETS
-import imgSmall1 from "../ASSETS/LEFT.jpg";
-import imgSmall2 from "../ASSETS/LEFTONE.jpg";
-import imgTall   from "../ASSETS/RIGHT.jpg";
+export default function AdminPage() {
+  const [messages, setMessages] = useState([]);
+  const navigate = useNavigate();
 
-export default function About() {
+  // 🔐 Logout handler
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    navigate("/login");
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+
+    fetch("http://localhost:5000/api/contact", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Unauthorized");
+        return res.json();
+      })
+      .then((data) => setMessages(data))
+      .catch((err) => console.error("Error loading messages:", err));
+  }, []);
+
   return (
-    <section id="about" className="about">
-      <div className="about__inner">
-        {/* Left: Text */}
-        <div className="about__text">
-          <p className="about__eyebrow">ABOUT US</p>
-          <h2 className="about__title">
-            Welcome To <br />
-            <span>Roberto Hotel Luxury</span>
-          </h2>
-          <div className="typewriter-text">
-       <Typewriter
-  options={{
-    strings: [
-      "With over 340 hotels worldwide, NH Hotel Group offers a wide variety of hotels.",
-      "Catering for a perfect stay no matter where your destination."
-    ],
-    autoStart: true,
-    loop: true,
-    delay: 40,
-  }}
-/>
-</div>
-
-          <div className="about__meta">
-            <p><strong>Manager:</strong> Micheal Jordan</p>
-            {/* remove signature as requested */}
-          </div>
-        </div>
-
-        {/* Right: Image Grid */}
-        <div className="about__grid">
-          <div className="about__gridLeft">
-            <img src={imgSmall1} alt="pool terrace" className="about__img about__img--card" />
-            <img src={imgSmall2} alt="infinity pool" className="about__img about__img--card" />
-          </div>
-          <div className="about__gridRight">
-            <img src={imgTall} alt="sea kayaking" className="about__img about__img--tall" />
-          </div>
-        </div>
+    <div className="admin-page">
+      <div className="admin-header">
+        <h1>📩 Contact Messages</h1>
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
-    </section>
+
+      {messages.length === 0 ? (
+        <p>No messages yet.</p>
+      ) : (
+        <table className="messages-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Subject</th>
+              <th>Message</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {messages.map((msg) => (
+              <tr key={msg.id}>
+                <td>{msg.name}</td>
+                <td>{msg.email}</td>
+                <td>{msg.subject}</td>
+                <td>{msg.message}</td>
+                <td>
+                  {msg.createdAt
+                    ? new Date(msg.createdAt).toLocaleString()
+                    : "—"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
   );
 }

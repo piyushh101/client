@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./RoomCarsoul.css";
 
 // ⬇️ swap with your real images in /src/ASSETS
-import room1 from "../ASSETS/Room.jpg";
+import room1 from "../ASSETS/room.jpg";
 import room2 from "../ASSETS/room2.jpg";
 import room3 from "../ASSETS/room3.jpg";
 
@@ -10,8 +10,8 @@ const SLIDES = [
   {
     image: room1,
     title: "Premium King Room",
-    price: 400,
-    size: "30 ft",
+    price: null,
+    size: "10 ft",
     capacity: "Max person 5",
     bed: "King Beds",
     services: "Wifi, Television, Bathroom",
@@ -19,8 +19,8 @@ const SLIDES = [
   {
     image: room2,
     title: "Deluxe Ocean Suite",
-    price: 560,
-    size: "45 ft",
+    price: null,
+    size: "8 ft",
     capacity: "Max person 4",
     bed: "1 King + 1 Sofa",
     services: "Wifi, Mini Bar, Sea View",
@@ -28,8 +28,8 @@ const SLIDES = [
   {
     image: room3,
     title: "Family Garden Room",
-    price: 320,
-    size: "35 ft",
+    price: null,
+    size: "12 ft",
     capacity: "Max person 6",
     bed: "2 Queen Beds",
     services: "Wifi, TV, Garden Access",

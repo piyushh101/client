@@ -1,0 +1,31 @@
+/* Center loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen */
+  background: #f9f9f9;
+}
+
+/* Circular spinning loader */
+.loader {
+  border: 6px solid #f3f3f3; /* light gray */
+  border-top: 6px solid #3498db; /* blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-container p {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+}

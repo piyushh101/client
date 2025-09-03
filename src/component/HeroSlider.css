@@ -1,5 +1,5 @@
 .carousel-caption {
-  position: absolute !important;   /* override bootstrap */
+  position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
@@ -10,59 +10,71 @@
   margin: 0 auto;
 }
 
-.caption-slide1 { 
-  color: #c4ff22; 
-              /* bright white text */
-  font-size: 1.2rem;           /* bigger text */
-  font-weight: 600;            /* make it bolder */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);  /* glowing shadow for contrast */
-  letter-spacing: 0.5px;     
-} 
-.caption-slide2 { 
-
- color: #fbff02;                 /* bright white text */
-  font-size: 1.2rem;           /* bigger text */
-  font-weight: 600;            /* make it bolder */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);  /* glowing shadow for contrast */
-  letter-spacing: 0.5px;    
- }
-.caption-slide3 { 
-   color: #00ff55;                 /* bright white text */
-  font-size: 1.2rem;           /* bigger text */
-  font-weight: 600;            /* make it bolder */
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);  /* glowing shadow for contrast */
-  letter-spacing: 0.5px;     
- } 
-
-/* Big screens */
+/* Title */
 .carousel-caption h2 {
   font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
 }
+
+/* Subtitle */
 .carousel-caption p {
   font-size: 1.3rem;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
-.carousel-caption .btn {
-  padding: 10px 25px;
+
+/* Button (always below text) */
+.carousel-caption button {
+  all: unset; /* reset all default button styles */
+  display: inline-block;
+  cursor: pointer;
+
+  padding: 12px 28px;
   font-size: 1rem;
   border-radius: 8px;
+  background-color: goldenrod;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
 }
+
+.carousel-caption button:hover {
+  background-color: #b8912e; /* darker golden */
+  color: #fff;
+}
+
 
 /* Tablets */
 @media (max-width: 992px) {
   .carousel-caption h2 { font-size: 2.2rem; }
   .carousel-caption p { font-size: 1rem; }
-  .carousel-caption .btn { padding: 8px 20px; font-size: 0.95rem; }
+  .carousel-caption .btn { font-size: 0.95rem; padding: 8px 20px; }
 }
 
 /* Mobiles */
 @media (max-width: 576px) {
   .carousel-caption {
-    top: 51% !important;   /* slightly lower */
+    top: 53% !important;
     width: 90%;
   }
   .carousel-caption h2 { font-size: 1.6rem; }
   .carousel-caption p { font-size: 0.9rem; }
-  .carousel-caption .btn { padding: 7px 12px; font-size: 0.85rem; }
+  .carousel-caption .btn { font-size: 0.85rem; padding: 7px 14px; }
+}
+.carousel-caption h2,
+.carousel-caption p {
+  color: #fff;
+}
+
+/* ✅ Mobile only background effect */
+@media (max-width: 768px) {
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  }
 }

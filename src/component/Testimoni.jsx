@@ -13,7 +13,7 @@ const ITEMS = [
     img: t1,
     title: "Exceptional Service",
     text:
-      "“Doloremque quae illum, nulla cumque quasi voluptates. Staff were friendly and rooms were spotless.”",
+      "“I stayed in the Superior Room and loved the comfort. The peaceful environment and courteous staff made my vacation truly relaxing. I’ll definitely visit again”",
     name: "Michael Kim",
     role: "Entrepreneur",
     rating: 5,
@@ -22,16 +22,16 @@ const ITEMS = [
     img: t2,
     title: "Our Guests Love Us",
     text:
-      "“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus delectus facilis molestias, error vitae praesentium.”",
+      "“Our family had a wonderful time at Bafna Resort. The rooms were spotless, spacious, and offered beautiful views. The staff went above and beyond to make us feel at home”",
     name: "Akash Downey",
-    role: "CEO Decreative",
+    role: "Event Organizer",
     rating: 5,
   },
   {
     img: t3,
     title: "A Perfect Stay",
     text:
-      "“Quibusdam ratione delectus omnis at reiciendis ullam id libero. Rooms are comfy and vibe is premium.”",
+      "“From check-in to check-out, everything was seamless. The banquet hall was perfect for our family function, and the food at Aahaar Pure Veg Restaurant was simply delicious”",
     name: "Ritika Sharma",
     role: "Travel Blogger",
     rating: 4,

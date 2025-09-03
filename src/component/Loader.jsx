@@ -1,8 +1,11 @@
-import "./Loader.scss";
-export default function Loader({ hidden = false }) {
+import React from "react";
+import "./loder.css";
+
+export default function Loader() {
   return (
-    <div className={`loader-wrapper ${hidden ? "hidden" : ""}`}>
+    <div className="loader-container">
       <div className="loader"></div>
+      <p>Loading...</p>
     </div>
   );
 }

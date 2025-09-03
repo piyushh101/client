@@ -1,0 +1,85 @@
+.aahaar {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero */
+.aahaar-hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.aahaar-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+.aahaar-hero .overlay {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+.aahaar-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+.aahaar-hero p {
+  font-size: 1.2rem;
+}
+
+/* Content */
+.aahaar-content {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.aahaar-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: goldenrod;
+}
+.aahaar-content ul {
+  text-align: left;
+  max-width: 600px;
+  margin: 20px auto;
+  padding-left: 20px;
+}
+.aahaar-content li {
+  margin-bottom: 10px;
+}
+
+/* Subsection */
+.aahaar-subsection {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.aahaar-subsection h2 {
+  color: goldenrod;
+  margin-bottom: 20px;
+}
+
+/* Gallery */
+.aahaar-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+}
+.aahaar-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform .3s;
+}
+.aahaar-gallery img:hover {
+  transform: scale(1.03);
+}
