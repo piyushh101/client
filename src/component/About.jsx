@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "./Admin.css";
+import { API_BASE_URL } from "../config";
 
 export default function AdminPage() {
   const [messages, setMessages] = useState([]);
@@ -16,7 +17,7 @@ export default function AdminPage() {
   useEffect(() => {
     const token = localStorage.getItem("authToken");
 
-    fetch("http://localhost:5000/api/contact", {
+fetch(`${API_BASE_URL}/api/contact`,  {
       headers: {
         Authorization: `Bearer ${token}`,
       },
